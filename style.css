@@ -2547,3 +2547,82 @@ select.mobile-device {
 .social-icons a:nth-child(4):hover {
     color: #00C300; /* Linktree - Green */
 }
+
+/* Style for social icons in the header */
+.navbar .social-icon i {
+    font-size: 1.8rem; /* Increases icon size */
+    color: white; /* Default color */
+    transition: all 0.3s ease; /* Smooth animation */
+  }
+  
+  .navbar .social-icon i:hover {
+    color: #0077b5; /* LinkedIn blue */
+    transform: scale(1.3); /* Slightly enlarge on hover */
+  }
+  
+  /* Specific color for GitHub hover */
+  .navbar .social-icon:nth-child(2) i:hover {
+    color: #333; /* GitHub black */
+  }
+  
+  .ser-icon i {
+    font-size: 2rem; /* Adjust size */
+    color: #007bff; /* Add color */
+  }
+  
+
+
+  .project-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Updated Overlay Styling */
+.gallery-single .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* Hover Effect */
+.gallery-single:hover .img-overlay {
+    opacity: 1;
+}
+
+/* GitHub Icon Styling */
+.gallery-single .hoverbutton {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Animation for the Icon */
+.gallery-single .hoverbutton:hover {
+    transform: scale(1.3); /* Slight zoom effect */
+}
+
+/* Icon Element Inside Hoverbutton */
+.gallery-single .hoverbutton i {
+    font-size: 2.5rem;
+    position: relative;
+}
