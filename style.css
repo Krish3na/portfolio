@@ -305,42 +305,58 @@ a img.aligncenter {
 /*------------------------------------------------------------------
     HEADER
 -------------------------------------------------------------------*/
-
-.navbar-dark{
-	
+/* Header background overlay */
+#mainNav {
+    background-color: rgba(0, 0, 0, 0.3); /* Add a semi-transparent black background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for separation */
+    backdrop-filter: blur(5px); /* Apply a blur effect for a frosted glass look */
+    -webkit-backdrop-filter: blur(5px); /* Support for Safari */
+    padding: 10px 0; /* Add padding for spacing */
+    position: fixed; /* Keep the header fixed at the top */
+    width: 100%; /* Ensure it spans the full width of the screen */
+    z-index: 10; /* Keep it above other content */
+    transition: background-color 0.3s ease; /* Smooth transition for hover or scroll effects */
 }
 
-.navbar-dark .navbar-nav .nav-link{
-	color: #ffffff;
-	letter-spacing: 1px;
-	font-size: 14px;
-	position: relative;
+/* Logo, navigation links, and icons styling */
+.navbar-brand,
+.navbar-nav .nav-link,
+.navbar-social .social-icon {
+    color: white; /* Ensure content stands out against the background */
+    transition: color 0.3s ease;
 }
-.navbar-dark .navbar-nav .nav-link:hover{
-	color: #ffffff;
+
+/* Hover effects for links and icons */
+.navbar-nav .nav-link:hover,
+.navbar-social .social-icon:hover {
+    color: #0077b5; /* LinkedIn blue or any accent color you prefer */
 }
-.navbar-dark .navbar-nav .nav-link.active{
-	font-weight: 600;
+
+/* Active link styling */
+.navbar-nav .nav-link.active {
+    color: #FF4136; /* Highlight the active link */
+    font-weight: bold;
 }
-.navbar-dark .navbar-nav .nav-link::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #ffffff;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-	right: 0;
-	text-align: center;
-	margin: 0 auto;
-    border-radius: 0px;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    z-index: -1;
+
+/* Add a slight padding or margin to the logo for better spacing */
+.navbar-brand {
+    padding-right: 20px;
 }
-.navbar-dark .navbar-nav .nav-link.active::after {
-	width: 50%;
+
+/* Spacing between social icons */
+.navbar-social {
+    display: flex;
+    gap: 15px; /* Adjust the spacing between icons */
+    align-items: center;
 }
+
+/* Optional: Add a slight fade effect when scrolling */
+#mainNav.navbar-shrink {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background on scroll */
+    padding: 8px 0; /* Adjust padding when shrunk */
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
 
 /*------------------------------------------------------------------
     SECTIONS
@@ -660,16 +676,7 @@ xclip
 	background: #ffffff;
 	margin-bottom: 30px;
 }
-.ser-icon{
-	width: 90px;
-	height: 90px;
-	text-align: center;
-	line-height: 90px;
-}
-.ser-icon i{
-	font-size: 50px;
-	color: #333333;
-}
+
 .skills-inner-box h2{
 	font-size: 22px;
 	font-weight: 600;
@@ -2684,4 +2691,114 @@ select.mobile-device {
 .gallery-single .hoverbutton i {
     font-size: 2.5rem;
     position: relative;
+}
+
+/* Icon Styling */
+.ser-icon i {
+    font-size: 2rem; /* Adjust icon size */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Assign Specific Colors to Icons */
+.ser-icon:nth-child(1) i {
+    color: #3498db; /* Blue for Data Analysis */
+}
+
+.ser-icon:nth-child(2) i {
+    color: #e74c3c; /* Red for Machine Learning */
+}
+
+.ser-icon:nth-child(3) i {
+    color: #f1c40f; /* Yellow for Data Engineering */
+}
+
+.ser-icon:nth-child(4) i {
+    color: #2ecc71; /* Green for Data Visualization */
+}
+
+.ser-icon:nth-child(5) i {
+    color: #9b59b6; /* Purple for Cloud Computing */
+}
+
+.ser-icon:nth-child(6) i {
+    color: #1abc9c; /* Teal for Artificial Intelligence */
+}
+
+/* Add Hover Effects for Icons */
+.ser-icon i:hover {
+    transform: scale(1.2); /* Slight enlargement on hover */
+    filter: brightness(1.2); /* Brighten color on hover */
+}
+
+
+/* Ensure the hero section (#home) spans the full viewport height and centers content */
+#home {
+    background-size: cover; /* Ensure the background covers the area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repetition */
+    height: 100vh; /* Set height to full viewport */
+    display: flex; /* Enable flexbox for alignment */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    position: relative; /* Allow relative positioning for inner elements */
+    padding: 0; /* Remove any padding */
+}
+
+/* Ensure the text inside the heading is centered */
+.heading {
+    color: #fff; /* Set text color */
+    text-align: center; /* Align text to center */
+    margin: 0 auto; /* Center the block */
+    max-width: 80%; /* Optional: Limit text width */
+    position: relative; /* Keep relative for z-index adjustments */
+    z-index: 1; /* Ensure it appears above background overlay */
+}
+
+/* Individual heading styles */
+.heading h1 {
+    font-size: 4rem; /* Adjust font size */
+    font-weight: bold; /* Emphasize */
+    margin-bottom: 1rem; /* Add space below */
+}
+
+.heading p {
+    font-size: 1.5rem; /* Adjust font size for the paragraph */
+    margin-bottom: 1rem; /* Add spacing below the paragraph */
+}
+
+.heading h3 {
+    font-size: 2rem; /* Adjust specialization size */
+    margin-top: 1rem; /* Add spacing above specialization */
+}
+
+/* Adjust overlay if present */
+#home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    z-index: 0; /* Ensure it is below the content */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #home {
+        height: auto; /* Allow auto height for smaller screens */
+        padding: 20px; /* Add padding */
+    }
+
+    .heading h1 {
+        font-size: 2.5rem; /* Adjust for smaller screens */
+    }
+
+    .heading p {
+        font-size: 1.2rem; /* Smaller paragraph size */
+    }
+
+    .heading h3 {
+        font-size: 1.5rem; /* Adjust specialization size */
+    }
 }
