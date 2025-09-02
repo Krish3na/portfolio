@@ -2569,6 +2569,11 @@ select.mobile-device {
     text-decoration: none; /* Remove underline */
 }
 
+/* GitHub icon specific styling */
+.navbar-social .social-icon:nth-child(2) {
+    color: #e0e0e0; /* Slightly dimmed default color for GitHub */
+}
+
 .navbar-social .social-icon:hover {
     transform: scale(1.2); /* Slightly enlarge on hover */
 }
@@ -2578,7 +2583,7 @@ select.mobile-device {
 }
 
 .navbar-social .social-icon:nth-child(2):hover {
-    color: #333; /* GitHub black */
+    color: #ffffff; /* GitHub icon turns bright white on hover */
 }
 
 .navbar-social .social-icon:nth-child(3):hover {
@@ -2595,7 +2600,7 @@ select.mobile-device {
     color: white; /* Default text color */
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     position: relative;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -2728,6 +2733,129 @@ select.mobile-device {
 .ser-icon i:hover {
     transform: scale(1.2); /* Slight enlargement on hover */
     filter: brightness(1.2); /* Brighten color on hover */
+}
+
+/*------------------------------------------------------------------
+    EXPERIENCE CARDS UNIFORM HEIGHTS
+-------------------------------------------------------------------*/
+
+/* Make experience cards have uniform heights */
+#experiences .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#experiences .col-md-4,
+#experiences .col-sm-6,
+#experiences .col-lg-4 {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#experiences .post-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#experiences .post-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#experiences .post-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure all cards stretch to same height */
+#experiences .post-box {
+    height: 100%;
+    min-height: 400px; /* Set minimum height for consistency */
+}
+
+/* Make description text fill available space */
+#experiences .post-info p {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Enhanced uniform heights for better consistency */
+#experiences .post-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 450px; /* Increased minimum height for better uniformity */
+    box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#experiences .post-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 25px 15px;
+    background: #ffffff;
+}
+
+#experiences .post-info p {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    flex: 1;
+}
+
+#experiences .post-info p:last-child {
+    margin-bottom: 0;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Fix description alignment with better spacing */
+#experiences .post-info h4 {
+    min-height: 50px; /* Reduced height for titles */
+    display: flex;
+    align-items: flex-start; /* Better alignment */
+    margin-bottom: 8px; /* Reduced margin */
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+#experiences .post-info p:first-of-type {
+    min-height: 30px; /* Reduced height for company/location line */
+    display: flex;
+    align-items: flex-start; /* Better alignment */
+    margin-bottom: 15px; /* Reduced margin */
+    font-weight: 500;
+}
+
+/* Ensure ALL descriptions start at exactly the same vertical position */
+#experiences .post-info h4 {
+    height: 50px !important; /* Fixed height for ALL titles */
+    max-height: 50px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+#experiences .post-info p:first-of-type {
+    height: 30px !important; /* Fixed height for ALL company lines */
+    max-height: 30px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Force descriptions to start at same position */
+#experiences .post-info p:last-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: relative;
+    top: 0;
 }
 
 
